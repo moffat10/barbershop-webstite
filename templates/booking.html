@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div id="header"> <h1><a href="{{url_for('dashboard')}}"><button>Dashboard</button></a> | Schedule Appointment</h1></div>
+<div id="data">
+    <form method="POST" enctype="multipart/form-data">
+       Date: <input type="date" name="date" required> <br><br>
+       Style:
+       <select name="style" id="category" required>
+        <option value="Fade">Fade</option>
+        <option value="Clean">Clean</option>
+        <option value="Mohawk">Mohawk</option>
+        <option value="Other">Other</option>
+        
+    </select><br><br>   
+    <button type="submit">Submit</button>
+    </form>
+</div>
+    
+</body>
+</html>

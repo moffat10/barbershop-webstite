@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div id="header"><a href="/">HOME</a><h1>Login to your account</h1></div>
+   
+        {% with messages=get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <h4>{{message}}</h4>
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+  
+    <div id="data">
+        <form method="POST">
+            Username: <input type="text" placeholder="Enter username" name="username" required><br><br>
+            Password: <input type="password" placeholder="Enter Password" name="password" required><br><br>
+            <button type="submit">Login</button><br><br>
+           
+        </form>
+        
+    </div>
+    
+    <br><br>
+    <div id="fog">
+        <a href="">Forgot password?</a><br>
+        Don't have an account? <a href="\templates\create_account">Create account</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,199 @@
+#head{
+    background-color: #300ec5;
+    color: rgb(233, 222, 208);
+    text-align: center;
+    font-family:monospace;
+    font-style:oblique;
+    margin: 0,auto,0,auto;
+    border-radius: 15px;
+}
+button{
+    height: 30px;
+    width: 150px;
+    color: white;
+    background-color:rgb(29, 8, 218);
+    border-radius: 5px;
+    border-color:cornflowerblue;
+    font-size:large;
+}
+a{
+    font-family:monospace;
+    font-size: x-large;
+}
+#fog{
+    font-family: cursive;
+    text-align: center;
+    margin: 0,auto,0,auto;
+    background-color: rgb(233, 172, 80);
+    font-size: larger;
+    border-radius: 5px;
+}
+#data{
+    background-color: bisque;
+    text-align: center;
+    color:#350fe0;
+    font-family: fantasy;
+    font-size: medium;
+    border-radius: 5px;
+}
+#header{
+    background-color: #ebce99;
+    color: rgb(16, 72, 224);
+    text-align: center;
+    font-family:monospace;
+    margin: 0,auto,0,auto;
+    border-radius: 5px;
+}
+
+#container{
+    color:antiquewhite;
+    background-color:#0ec545;
+    margin: o,auto,0,auto;
+    text-align: center;
+    border-radius: 20px;
+        }
+#cat{
+    text-align: center;
+    background-color:aqua;
+    margin: 0,auto,0,auto;
+    border-radius: 20px;
+    color: #4027ae;
+    margin-bottom: 5px;
+    padding-bottom: 15px;
+
+        }
+.product-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+.product-card{
+    background-color: bisque;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 15px;
+    padding: 20px;
+    width: 75%;
+    text-align: center;
+}
+.product-image{
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.product-name{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.product-price{
+    font-size: 16px;
+    color: #27ae60;
+    margin-bottom: 10px;
+}
+.product-condition{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.seller-contact{
+    font-size: 14px;
+    color: #3498db;
+}
+.alert{
+    padding: 15px;
+    background-color:#a9c50ad3;
+    color:white;
+    margin-bottom: 15px;
+
+}
+input[type=text]{
+    padding: 8px 20px;
+    margin: 8px 0;
+    box-sizing:border-box;
+}
+input[type=password]{
+    padding: 8px 20px;
+    margin: 8px 0;
+    box-sizing:border-box;
+}
+.closebtn{
+    margin-left: 15px;
+    padding: 0px 7px ;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 35px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 15px;
+}
+
+.closebtn:hover{
+    color:black
+}
+.logoutbtn{
+    margin-left: 15px;
+    color: red;
+    font-weight: lighter;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+select{
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing:border-box;  
+}
+input[type=tel]{
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing:border-box;
+}
+input[type=number]{
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing:border-box;
+}
+.product-image{
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.product-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+#moto{
+    margin: 0px,auto,0px,auto;
+    color:rgb(12, 187, 85);
+    text-align: center;
+    font-weight:100;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    background-color:skyblue;
+}
+th{
+    text-align: left;
+    padding:20px;
+    font-size: large;
+}
+td{
+    padding: 25px;
+    color:blue;
+    font-size: large;
+    text-align: center;
+    font-weight: bold;
+}
+
+table{
+   
+    background-color:rgba(224, 224, 233, 0.644);
+    border-radius: 5px;
+}

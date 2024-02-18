@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create account</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div id="header"><a href="/">HOME</a><h1>Create Account</h1></div>
+    {% with messages=get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <h4>{{message}}</h4>
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    <div id="data">
+        <form method="POST">
+            <label for="phone_number">Phone number:</label>
+            <input type="tel" placeholder="Enter phone number" name="phone_number" minlength="10" maxlength="10" required><br><br>
+            username: <input type="text" placeholder="enter your username" name="username" required><br><br>
+            Password: <input type="password" placeholder="Create a password" name="password" minlength="4" required><br><br>
+            <button type="submit">Submit</button><br><br>
+           
+        </form>
+        
+    </div>
+    <br><br>
+    <div id="fog">
+        <a href="">Forgot password?</a><br>
+        Already have an account? <a href="\templates\login">Login</a>
+    </div>
+    
+</body>
+</html>

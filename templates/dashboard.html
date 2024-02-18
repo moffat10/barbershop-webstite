@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div id="header"><h1>Dashboard      | {{ current_user.username }} <a href="{{url_for('logout')}}" style="align-items: self-end;"> <button class="logoutbtn">Log out</button></a> </h1></div>
+    {% with messages=get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <h4>{{message}}</h4>
+                </div>
+                {% endfor %}
+            {% endif %}
+    {% endwith %}
+    <h1 id="fog">My Booked Appointments</h1>
+    {% for appoints in my_appointments %}
+    <div id="cat">
+        Date: {{appoints.date}} <br>
+        Style: {{appoints.style}} <br>
+        Payment status:
+        <br><br> <a href=""><button>Cancel</button></a>
+    </div>
+    {% endfor %}
+   <div class="product-container">
+        <a href="/templates/booking"><button>Book</button></a>
+   </div>
+    
+</body>
+</html>
