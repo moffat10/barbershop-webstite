@@ -268,8 +268,8 @@ table{
     box-sizing: border-box;
 }
 .footer{
-    color:#ccc;
-    background-color: blue;
+    color:blue;
+    background-color:rgb(6, 231, 44);
     padding: 20px;
     border-radius: 10px;
     font-weight: bold;
