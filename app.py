@@ -34,6 +34,7 @@ class Appointments(db.Model,UserMixin):
     customer_name=db.Column(db.String(50),unique=True,nullable=False)
     customer_phone=db.Column(db.String(50),unique=True,nullable=False)
     date=db.Column(db.String(50),nullable=False)
+    time=db.Column(db.String(50),nullable=False)
     user_id=db.Column(db.Integer,db.ForeignKey('user.id'))
 
 
@@ -90,11 +91,12 @@ def logout():
 def booking():
     if request.method=='POST':
         date=request.form['date']
+        time=request.form['time']
         style=request.form['style']
         user_id=current_user.id
         customer_name=current_user.username
         customer_phone=current_user.phone_number
-        new_appointment=Appointments(date=date,style=style,user_id=user_id,customer_name=customer_name,customer_phone=customer_phone)
+        new_appointment=Appointments(date=date,time=time,style=style,user_id=user_id,customer_name=customer_name,customer_phone=customer_phone)
         db.session.add(new_appointment)
         db.session.commit()
         flash('booked sucessfully','success')

@@ -9,10 +9,12 @@
 <body>
     <div id="head"><h1>Available appointments</h1></div>
     {% for appoints in all_appointments %}
-    <div id="cat"><h3>{{appoints.id}}. <br>
-        Date: {{appoints.date}} <br>
+    <div id="cat"><h3>
+        Date: {{appoints.date}} 
+        Time: {{appoints.time}} <br>
         Style: {{appoints.style}} <br>
-        Customer Name: {{appoints.customer_name}}</h3></div>
+        Name: {{appoints.customer_name}} </h3> </div>
+        
     {% endfor %}<br>
 </body>
 </html>
