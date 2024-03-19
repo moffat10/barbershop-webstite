@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Reset Password</title>
     <link rel="stylesheet" href="/static/style.css">
+        
 </head>
 <body>
-    <div id="header"><a href="/" style="color: aliceblue;">Home</a><h1>Login to your account</h1></div>
+    <div id="header"><a href="/"><button>HOME</button></a><h1>Password Reset</h1></div>
    
         {% with messages=get_flashed_messages() %}
             {% if messages %}
@@ -19,23 +21,22 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-        <br>
-  <div class="holder">
+        <br><br>
+    <div class="holder">
     <div class="login-container">
         <form method="POST">
-            Username: <input type="text" placeholder="Enter username" name="username" required><br><br>
-            Password: <input type="password" placeholder="Enter Password" name="password" required><br><br>
-            <button type="submit" class="sub-btn">Login</button><br><br>
+             <input type="email" placeholder="Enter your Email" name="email" required><br><br>
+            <button type="submit" class="sub-btn">Submit</button><br><br>
            
         </form>
-        
     </div>
-</div>
-    
+    </div>
+    </div>
     <br><br>
     <div id="fog">
-        <a href="/reset">Forgot password?</a><br>
-        Don't have an account? <a href="\templates\create_account">Create account</a>
+        Don't have an account? <a href="\create-seller">Create account</a><br><br>
+        Already have an account? <a href="\login">Login</a>
     </div>
+    
 </body>
 </html>

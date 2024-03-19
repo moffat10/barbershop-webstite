@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  
+</head>
+<body>
+    <div id="header"><a href="/"><button>HOME</button></a><h1>Password Reset</h1></div>
+   
+        {% with messages=get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <h4>{{message}}</h4>
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <br><br>
+    <div class="holder">
+    <div class="login-container">
+        <form method="POST">
+             <input type="email" placeholder="Enter your Email" name="email" required><br><br>
+             <input type="text" placeholder="Enter code" name="code" required><br><br>
+             New password <input type="password" name="password" placeholder="password"><br><br>
+             Confirm Password <input type="password" name="passwordc" placeholder="password"><br><br>
+            <button type="submit" class="sub-btn">Submit</button><br><br>
+           
+        </form>
+    </div>
+    </div>
+    </div>
+    <br><br>
+    <div id="fog">
+        Don't have an account? <a href="\create-seller">Create account</a><br><br>
+        Already have an account? <a href="\login">Login</a>
+    </div>
+    
+</body>
+</html>

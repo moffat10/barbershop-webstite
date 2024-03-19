@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Admin Login</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div id="header"><a href="/" style="color: aliceblue;">Home</a><h1>Login to your account</h1></div>
+    <div id="header"><h1>Login</h1></div>
    
         {% with messages=get_flashed_messages() %}
             {% if messages %}
@@ -30,12 +30,6 @@
         </form>
         
     </div>
-</div>
-    
-    <br><br>
-    <div id="fog">
-        <a href="/reset">Forgot password?</a><br>
-        Don't have an account? <a href="\templates\create_account">Create account</a>
-    </div>
+
 </body>
 </html>

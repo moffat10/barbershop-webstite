@@ -8,12 +8,32 @@
 </head>
 <body>
     <div id="head"><h1>Available appointments</h1></div>
+    {% with messages=get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <h4>{{message}}</h4>
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
     {% for appoints in all_appointments %}
-    <div id="cat"><h3>
+    <div id="cat"><h4>
         Date: {{appoints.date}} 
         Time: {{appoints.time}} <br>
         Style: {{appoints.style}} <br>
-        Name: {{appoints.customer_name}} </h3> </div>
+        Name: {{appoints.customer_name}} <br>
+        
+    </h4> 
+
+<form method="post">
+    <input type="text" placeholder="Enter message" name="message">
+    <input type="hidden" name="userid" value="{{current_user.id}}">
+    <button type="submit">Send</button>
+</form>
+
+</div>
         
     {% endfor %}<br>
 </body>
