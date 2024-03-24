@@ -6,14 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking</title>
     <link rel="stylesheet" href="/static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+$(function(){
+    var dtToday = new Date();
+    
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+    
+    var maxDate = year + '-' + month + '-' + day;
+
+    // or instead:
+    // var maxDate = dtToday.toISOString().substr(0, 10);
+
+
+    $('#date').attr('min', maxDate);
+});
+$(function(){
+    var dtToday = new Date()
+    
+    var hour= dtToday.getHours();
+    var minutes = dtToday.getMinutes();
+    var seconds=dtToday.getSeconds();
+    if(hour < 10)
+        hour = '0' + hour.toString();
+    if(minutes < 10)
+        minutes = '0' + minutes.toString();
+    
+    var maxTime = '-' + Hour + '-' + minutes + seconds;
+
+    // or instead:
+    // var maxDate = dtToday.toISOString().substr(0, 10);
+
+
+    $('#time').attr('min', maxTime);
+});
+    </script>
 </head>
 <body>
     <div id="header"> <p><a href="{{url_for('dashboard')}}"><button>Dashboard</button></a></p> <h2>Schedule Appointment</h2></div>
 <br><br>
+
     <div class="holder">
     <div class="login-container">
     <form method="POST" enctype="multipart/form-data">
-       Date: <input type="date" name="date" required> <br><br>
+       Date: <input type="date" name="date" id="date" required> <br><br>
        Time: <input type="time" name="time" required> <br><br>
        Style:
        <select name="style" id="category" required>

@@ -21,6 +21,7 @@
     <h1 id="fog">My Booked Appointments <a href="/messages"><button>Messages</button></a></h1> 
     {% for appoints in my_appointments %}
     <div id="cat">
+        REf: {{appoints.appoint_id}}<br>
         Date: {{appoints.date}} <br>
         Time: {{appoints.time}} <br>
         Style: {{appoints.style}}       

@@ -5,6 +5,7 @@ from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import LoginManager,login_required,logout_user,login_user,UserMixin,current_user
 import os
 import random 
+import string
 
 app=Flask(__name__)
 app.config['SECRET_KEY']=os.environ.get('SECRET_KEY')
@@ -46,6 +47,7 @@ class Appointments(db.Model,UserMixin):
     customer_phone=db.Column(db.String(50),unique=True,nullable=False)
     date=db.Column(db.String(50),nullable=False)
     time=db.Column(db.String(50),nullable=False)
+    appoint_id=db.Column(db.String(50),nullable=False)
     user_id=db.Column(db.Integer,db.ForeignKey('user.id'))
 
 class Passrecovery(db.Model,UserMixin):
@@ -118,10 +120,13 @@ def booking():
         user_id=current_user.id
         customer_name=current_user.username
         customer_phone=current_user.phone_number
-        new_appointment=Appointments(date=date,time=time,style=style,user_id=user_id,customer_name=customer_name,customer_phone=customer_phone)
+        code= ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))
+        integ=random.randint(1000,9999)
+        appoint_id=str(code) + str(integ) 
+        new_appointment=Appointments(date=date,time=time,style=style,user_id=user_id,customer_name=customer_name,customer_phone=customer_phone,appoint_id=appoint_id)
         db.session.add(new_appointment)
         db.session.commit()
-        flash('booked sucessfully','success')
+        flash('Booked sucessfully, Book id %s'+appoint_id)
         return redirect(url_for('dashboard'))
     return render_template('booking.html')
 
